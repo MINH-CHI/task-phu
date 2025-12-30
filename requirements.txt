@@ -5,3 +5,4 @@ plotly
 pymongo
 minio
 python-dotenv
+Pillow
