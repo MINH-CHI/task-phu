@@ -15,5 +15,3 @@ with st.sidebar:
     st.title("Menu")
     st.success("✅ Đã xác thực tự động")
     st.divider()
-    st.info(f"API: `{API_URL}`")
-    st.caption("v1.3 - Auto Auth")
