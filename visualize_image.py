@@ -7,19 +7,19 @@ import traceback
 import os
 import io
 import sys
-from PIL import Image
+from PIL import Image #type:ignore
 from minio import Minio  #type:ignore
 from dotenv import load_dotenv #type: ignore
 load_dotenv(".env")
 MONGO_URI = os.getenv('MONGO_URI')
-DB_NAME = ""
-COLLECTION_NAME = ""
-BUCKET_NAME = ""
+DB_NAME = "api_request_log"
+COLLECTION_NAME = "test_yolo_12_confi_0.3"
+BUCKET_NAME = "test-yolo12-confi-0.3"
 MINIO_CONF = {
-    "endpoint":"sfgwf",
-    "access_key": "minioadmin",
-    "secret_key":"minioadmin",
-    "secure":True
+    "endpoint": "localhost:9000",
+    "access_key": os.getenv("MINIO_ACCESS_KEY"),
+    "secret_key": os.getenv("MINIO_SECRET_KEY"),
+    "secure": False
 }
 
 @st.cache_resource
