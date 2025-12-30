@@ -14,6 +14,6 @@ services:
     networks:
       - minhNetwork
 networks:
-  mongoNetwork:
+  minhNetwork:
     driver: bridge
     name: minhNetwork

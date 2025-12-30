@@ -47,7 +47,7 @@ st.title("📸 Hệ thống visualize ảnh ở các step")
 collection = get_mongo_client()
 minio_client = get_minio_client()
 
-all_records = list(collection.find({}, {"_id": 0})) 
+all_records = list(collection.find({}, {"_id": 0}))
 total_items = len(all_records)
 
 tab1, tab2 = st.tabs(["🖼️ So sánh Ảnh (Visual)", "📊 Metadata (Data)"])
@@ -83,7 +83,7 @@ with tab1:
     # Loop qua từng dòng dữ liệu của trang hiện tại
     for item in current_batch:
         file_name = item.get("filename", "Unknown")
-        path = item.get("storage_path", {})
+        path = item.get("minio_image_path", {})
         # Tạo row mới
         row = st.columns([1, 2, 2, 2])
         
