@@ -25,7 +25,7 @@ MINIO_CONF = {
 @st.cache_resource
 def get_minio_client():
     return Minio(
-        end_point=MINIO_CONF["endpoint"],
+        endpoint=MINIO_CONF["endpoint"],
         access_key=MINIO_CONF["access_key"],
         secret_key = MINIO_CONF["secret_key"],
         secure = MINIO_CONF["secure"]
