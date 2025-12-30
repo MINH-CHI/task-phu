@@ -46,6 +46,11 @@ st.set_page_config(layout="wide", page_title="Image Processing Dashboard")
 st.title("📸 Hệ thống visualize ảnh ở các step")
 collection = get_mongo_client()
 minio_client = get_minio_client()
+if not minio_client.bucket_exists(BUCKET_NAME):
+    minio_client.make_bucket(BUCKET_NAME)
+    print(f"Đã tạo bucket mới: {BUCKET_NAME}")
+else:
+    print(f"Bucket {BUCKET_NAME} đã tồn tại.")
 
 all_records = list(collection.find({}, {"_id": 0}))
 total_items = len(all_records)
